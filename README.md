@@ -143,24 +143,17 @@ sub: vectorsNegation.sub
 ---
 ```
 
+Right below that is the content area. You can write usage,
+detailed examples, and anything else for the user to know! This is just markdown.
+Pictures are very useful. We recommend that you copy an existing markdown (as
+a template) to create a new one.
+
 #### 3. Update the changelog
 
 The files in [_posts](_posts) render into the site changelog. Please add a new
 entry with meaningful information when you add, remove, or otherwise change content.
 This isn't a perfect way to track changes, but it's a best effort
 
-## Usage
-
-```bash
-$ /penrose {{ page.sub }} {{ page.sty }} {{ page.dsl }}
-```
-
-<img alt="negation" src="../img/negation.png">
-```
-
-Right below that is the content area. As you can see, we've written usage,
-detailed examples, and anything else for the user to know! This is just markdown.
-Pictures are very useful. 
 
 **Special Attributes**
 
