@@ -5,7 +5,7 @@
 This is a plugin intended for install in [penrose](https://penrose.github.io). It
 includes style, substance, and domain specific language (DSL) files.
 The visual portion of the site is meant to be human friendly, while the
-API served at `/index.json` is a programmatically accessible endpoint
+API served at `/library.json` is a programmatically accessible endpoint
 to retrieve the style.
 
 ## Setup
@@ -240,3 +240,9 @@ in the [_domains](_domains) folder, but also a unique id! In the example above,
 we see `penrose/domain-linear-algebra:simple/addition`. This also tells the user
 where to find it - under Github organization "penrose," repository "domain-linear-algebra"
 and subfolder in domains "simple/addition.md".
+
+### Generate My Own Domain?
+
+We have a cookie cutter template to help you do this! See 
+[penrose/cookiecutter-domain](https://github.com/penrose/cookiecutter-domain) to
+get started.
