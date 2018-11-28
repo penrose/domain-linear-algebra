@@ -1,0 +1,20 @@
+---
+title: library
+layout: none
+permalink: /library.json
+---
+
+{ "id": "{{ site.repo }}",
+  "links": {
+    "self": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+    "url": "https://www.github.com/{{ site.repo }}"
+  },
+
+  "data": [{% assign grouped = site.domain | group_by: 'category' %}{% for group in grouped %}{% assign items = group.items | sort: 'order' %}{% for item in items %}{% unless item.hidden == "true" %}{
+                "name": "{{ item.id | remove_first:'/' | escape }}",
+                "id": "{{ site.repo }}:{{ item.id | remove_first:'/' | escape }}",
+                {% if item.sty %}"sty": "{{ site.url }}{{ site.baseurl }}/src/sty/{{ item.sty | escape }}",{% endif %}
+                {% if item.dsl %}"dsl": "{{ site.url }}{{ site.baseurl }}/src/dsl/{{ item.dsl | escape }}",{% endif %}
+                {% if item.sub %}"sub": "{{ site.url }}{{ site.baseurl }}/src/sub/{{ item.sub | escape }}",{% endif %}
+                "group": "{{ group.name | escape }}"
+            }{% if forloop.last %}{% else %},{% endif %}{% endunless %}{% endfor %}{% endfor %}]}

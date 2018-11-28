@@ -1,0 +1,80 @@
+#----
+# Site
+
+title: "Linear Algebra"
+baseurl: "/domain-linear-algebra"
+google_analytics_key: "UA-129954962-1"
+show_full_navigation: false
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /assets/img/penrose-logo.png
+description: "Linear Algebra"
+author:
+  name:
+  email: kqy@cs.cmu.edu
+  twitter: # twitter username without the @ symbol
+social:
+  name: Penrose
+  links:
+    - https://github.com/penrose
+
+# The current hosting location of the docs
+repo: penrose/domain-linear-algebra
+reponame: domain-linear-algebra
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+exclude:
+  - _dev
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+
+collections:
+  domain:
+    title: Domain
+    permalink: /:path/
+    output: true
+  src:
+    title: Domain Source Files
+    permalink: /:collection/:path
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "domain"
+    values:
+      seo:
+        type: Article
+      _comments:
+        category: Group navigation links with this field
+        order: Used to sort links in the navigation
+      _options:
+        content:
+          width: 800
+          height: 2000
+
+# ---------
+# ChangeLog
+
+types:
+  - minor
+  - major
